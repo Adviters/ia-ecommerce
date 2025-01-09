@@ -1,0 +1,30 @@
+<div class="container mt-5" *ngIf="shoes">
+  <div class="d-flex">
+    <div class="col-7">
+      <img [src]="shoes.imageUrl" [alt]="shoes.name" />
+    </div>
+    <div class="d-flex flex-column justify-content-center col ps-5 info">
+      <h2>{{ shoes.name }}</h2>
+      <p>Size: {{ shoes.size }}</p>
+      <p>Color: {{ shoes.color }}</p>
+      <p>Shipping: {{ shoes.shipping }}</p>
+      <button mat-button class="custom-black-button mt-3 col-6">COMPRAR</button>
+    </div>
+  </div>
+  <div class="detail mb-2">Detalle del producto:</div>
+  <div>
+    Fusce tempus augue leo, vitae pretium tellus hendrerit ac. Nullam eu nibh
+    sed mauris aliquam sollicitudin at at turpis. Nulla congue luctus semper.
+    Fusce egestas pharetra laoreet. Integer enim neque, dictum eget imperdiet
+    at, dignissim id metus. Aenean dapibus facilisis neque nec volutpat.
+    Praesent ac ex aliquet, vehicula turpis sit amet, fringilla elit.
+  </div>
+  <div class="comment mt-4 mb-3">Comentarios</div>
+  <div class="d-flex align-items-center">
+    <mat-form-field class="example-full-width col-4">
+      <mat-label>Escribe un comentario...</mat-label>
+      <textarea matInput placeholder="Ej. disponibilidad de colores"></textarea>
+    </mat-form-field>
+    <button mat-button class="custom-grey-button ms-3">Enviar</button>
+  </div>
+</div>

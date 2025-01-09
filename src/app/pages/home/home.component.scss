@@ -1,0 +1,39 @@
+.container {
+  padding-bottom: 320px;
+  padding-top: 50px;
+}
+
+.shoes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.shoes-list app-shoes-item {
+  flex: 1 1 calc(33.333% - 16px);
+  box-sizing: border-box;
+}
+
+input {
+  border: none;
+  min-width: 425px;
+  outline: none;
+  background: none;
+  padding: 10px;
+  font-size: 22px;
+  color: #333;
+
+  &::placeholder {
+    color: #aaa;
+    transition: opacity 0.3s ease;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+  }
+}
+
+.search {
+  font-size: 32px;
+}

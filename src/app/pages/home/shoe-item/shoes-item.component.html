@@ -1,0 +1,10 @@
+<a [routerLink]="['/shoes', shoe.id]" class="shoe-item">
+  <img [src]="shoe.imageUrl" [alt]="shoe.name" />
+
+  <!--   <div>Size: {{ shoe.size }}</div>
+  <div>Color: {{ shoe.color }}</div> -->
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="name">{{ shoe.name }}</div>
+    <div class="shipping">{{ shoe.shipping }}</div>
+  </div>
+</a>

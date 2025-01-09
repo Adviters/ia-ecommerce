@@ -1,0 +1,25 @@
+.shoe-item {
+  img {
+    width: 300px;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.shipping {
+  color: #2b9b93;
+  background-color: #edf5ea;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 18px;
+}
