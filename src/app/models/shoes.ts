@@ -1,8 +1,11 @@
 export interface Shoes {
   id: number;
-  name: string;
-  size: number;
-  color: string;
-  shipping: string;
-  imageUrl: string;
+  nombre: string;
+  descripcion: string;
+  talle: number[];
+  colores: string[];
+  categoria: string;
+  precio: string;
+  stock: boolean;
+  imageUrl?: string;
 }

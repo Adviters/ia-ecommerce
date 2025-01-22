@@ -2,19 +2,35 @@
   <div
     class="input-container col-12 d-flex align-items-center justify-content-center mb-5"
   >
-    <span class="material-icons search pointer"> search </span>
+    <span class="material-icons search pointer">search</span>
     <input
       type="text"
       id="customInput"
+      [(ngModel)]="searchQuery"
       class="search-text"
       placeholder="Buscar productos, secciones y consultas"
     />
+    <button (click)="onSearchClick()" class="btn btn-secondary ml-2">
+      Buscar
+    </button>
   </div>
-  <div class="shoes-list">
-    <app-shoes-item
-      class="d-flex justify-content-center mb-5"
-      *ngFor="let shoe of shoesList"
-      [shoe]="shoe"
-    ></app-shoes-item>
+  <div class="col-12 d-flex justify-content-end mb-3">
+    <button
+      *ngIf="isFiltered"
+      (click)="clearFilters()"
+      class="btn btn-danger ml-2"
+    >
+      Borrar Filtros
+    </button>
+  </div>
+
+  <div class="row shoes-list">
+    <div class="col-md-4 mb-4" *ngFor="let shoe of shoesList">
+      <app-shoes-item
+        [shoe]="shoe"
+        class="shoe-item"
+        [routerLink]="['/shoes', shoe.id]"
+      ></app-shoes-item>
+    </div>
   </div>
 </div>

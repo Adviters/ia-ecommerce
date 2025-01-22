@@ -1,13 +1,10 @@
 <div class="container mt-5" *ngIf="shoes">
   <div class="d-flex">
     <div class="col-7">
-      <img [src]="shoes.imageUrl" [alt]="shoes.name" />
+      <img [src]="shoes.imageUrl" [alt]="shoes.nombre" />
     </div>
     <div class="d-flex flex-column justify-content-center col ps-5 info">
-      <h2>{{ shoes.name }}</h2>
-      <p>Size: {{ shoes.size }}</p>
-      <p>Color: {{ shoes.color }}</p>
-      <p>Shipping: {{ shoes.shipping }}</p>
+      <h2>{{ shoes.nombre }}</h2>
       <button mat-button class="custom-black-button mt-3 col-6">COMPRAR</button>
     </div>
   </div>
@@ -23,8 +20,18 @@
   <div class="d-flex align-items-center">
     <mat-form-field class="example-full-width col-4">
       <mat-label>Escribe un comentario...</mat-label>
-      <textarea matInput placeholder="Ej. disponibilidad de colores"></textarea>
+      <textarea
+        matInput
+        placeholder="Ej. disponibilidad de colores"
+        [(ngModel)]="userComment"
+      ></textarea>
     </mat-form-field>
-    <button mat-button class="custom-grey-button ms-3">Enviar</button>
+    <button mat-button class="custom-grey-button ms-3" (click)="sendRequest()">
+      Enviar
+    </button>
+  </div>
+  <div *ngIf="responseData" class="response-container mt-4">
+    <h3>Respuesta del Chat:</h3>
+    <div>{{ responseData.join(", ") }}</div>
   </div>
 </div>

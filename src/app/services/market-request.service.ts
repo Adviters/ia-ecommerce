@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 export class MarketRequestService {
   private http = inject(HttpClient);
   private apiUrl =
-    'https://728c-2800-810-565-248-9cca-684c-dee9-640f.ngrok-free.app/api/v1/ollama/market';
+    'https://0589-2800-810-565-248-5dcf-5ba8-492b-8dfa.ngrok-free.app/api/v1/ollama/market-product';
 
   sendMarketRequest(data: MarketRequest): Observable<any> {
     const formData = new FormData();
     formData.append('query', data.query);
     formData.append('session_id', data.session_id);
-    formData.append('id_producto', data.id_producto);
+    formData.append('id_producto', data.id_producto.toString());
     formData.append('secret_key', data.secret_key);
 
     return this.http.post(this.apiUrl, formData);

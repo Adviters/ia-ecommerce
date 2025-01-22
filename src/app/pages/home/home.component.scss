@@ -3,13 +3,6 @@
   padding-top: 50px;
 }
 
-.shoes-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px;
-}
-
 .shoes-list app-shoes-item {
   flex: 1 1 calc(33.333% - 16px);
   box-sizing: border-box;

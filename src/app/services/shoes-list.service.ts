@@ -10,13 +10,15 @@ import { Product } from '../interfaces/products.interface';
 export class ShoesListService {
   private http = inject(HttpClient);
   private apiUrl =
-    'https://728c-2800-810-565-248-9cca-684c-dee9-640f.ngrok-free.app/api/v1/ollama/products';
+    'https://0589-2800-810-565-248-5dcf-5ba8-492b-8dfa.ngrok-free.app/api/v1/ollama/products';
 
-  getProducts(): Observable<Product[]> {
+  getProducts(): Observable<{ productos: Product[] }> {
     const headers = new HttpHeaders({
       'ngrok-skip-browser-warning': 'true',
     });
 
-    return this.http.get(this.apiUrl, { headers }) as Observable<Product[]>;
+    return this.http.get(this.apiUrl, { headers }) as Observable<{
+      productos: Product[];
+    }>;
   }
 }
