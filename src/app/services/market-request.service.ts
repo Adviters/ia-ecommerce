@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { MarketRequest } from '../interfaces/market-request.interface';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarketRequestService {
   private http = inject(HttpClient);
-  private apiUrl =
-    'https://0589-2800-810-565-248-5dcf-5ba8-492b-8dfa.ngrok-free.app/api/v1/ollama/market-product';
+  private apiUrl = environment.detailRequestUrl;
 
   sendMarketRequest(data: MarketRequest): Observable<any> {
     const formData = new FormData();

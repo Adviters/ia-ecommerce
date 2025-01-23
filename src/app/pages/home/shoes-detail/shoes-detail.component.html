@@ -16,10 +16,13 @@
     at, dignissim id metus. Aenean dapibus facilisis neque nec volutpat.
     Praesent ac ex aliquet, vehicula turpis sit amet, fringilla elit.
   </div>
-  <div class="comment mt-4 mb-3">Comentarios</div>
+  <div class="d-flex align-items-center">
+    <div class="comment mt-4 mb-3">¿Tenés consultas?</div>
+    <span class="material-icons ms-2"> smart_toy </span>
+  </div>
   <div class="d-flex align-items-center">
     <mat-form-field class="example-full-width col-4">
-      <mat-label>Escribe un comentario...</mat-label>
+      <mat-label>Escribe tu consulta...</mat-label>
       <textarea
         matInput
         placeholder="Ej. disponibilidad de colores"
@@ -31,7 +34,16 @@
     </button>
   </div>
   <div *ngIf="responseData" class="response-container mt-4">
-    <h3>Respuesta del Chat:</h3>
-    <div>{{ responseData.join(", ") }}</div>
+    <div class="d-flex align-items-center">
+      <h3>Historial de respuestas:</h3>
+      <span class="material-icons ms-2"> chat </span>
+    </div>
+    <div
+      *ngFor="let response of responses; let i = index"
+      class="response mb-3"
+    >
+      <h4>Respuesta {{ responses.length - i }}:</h4>
+      <div>{{ response.join(", ") }}</div>
+    </div>
   </div>
 </div>

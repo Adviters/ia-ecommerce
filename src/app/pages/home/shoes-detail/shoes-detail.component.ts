@@ -17,6 +17,7 @@ export class ShoesDetailComponent {
   private route = inject(ActivatedRoute);
   private shoesListService = inject(ShoesListService);
   private shoesList: Product[] = [];
+  responses: string[][] = [];
   private marketRequestService = inject(MarketRequestService);
   responseData: any;
   userComment: string = '';
@@ -72,6 +73,7 @@ export class ShoesDetailComponent {
         tap({
           next: (response) => {
             this.responseData = response.response.respuesta;
+            this.responses.unshift(this.responseData);
             console.log('Respuesta del servidor:', response);
           },
           error: (error) => {
