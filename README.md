@@ -9,7 +9,7 @@ Primero hacer un 'npm install' y luego 'ng serve' para levantar el proyecto.
 Verificar las URL en el archivo environment dentro de la carpeta environments
 En homeRequestUrl va la URL que pertenece al buscador de la Home, devuelve los productos que coinciden con la busqueda
 En detailRequestUrl va la URL que pertence al detalle de cada producto, donde se encuentra el chat de consultas
-En shoesListUrl va la URL que pertenece a la Home, y devuelve el listado original de zapatillas.
+En shoesListUrl va la URL que pertenece a la Home, y devuelve el listado original de zapatillas
 
 ## Development server
 
