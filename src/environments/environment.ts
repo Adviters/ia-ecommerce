@@ -1,5 +1,8 @@
 export const environment = {
-  homeRequestUrl: 'http://0.0.0.0:5004/api/v1/ollama/market-all-products',
-  detailRequestUrl: 'http://0.0.0.0:5004/api/v1/ollama/market-product',
-  shoesListUrl: 'http://0.0.0.0:5004/api/v1/ollama/products',
+  homeRequestUrl:
+    'https://cbf2-181-46-77-108.ngrok-free.app/api/v1/ollama/market-all-products',
+  detailRequestUrl:
+    'https://cbf2-181-46-77-108.ngrok-free.app/api/v1/ollama/market-product',
+  shoesListUrl:
+    'https://cbf2-181-46-77-108.ngrok-free.app/api/v1/ollama/products',
 };

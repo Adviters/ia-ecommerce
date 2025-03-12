@@ -17,7 +17,7 @@ export class ShoesDetailComponent {
   private route = inject(ActivatedRoute);
   private shoesListService = inject(ShoesListService);
   private shoesList: Product[] = [];
-  responses: string[][] = [];
+  responses: { question: string; answer: any }[] = [];
   private marketRequestService = inject(MarketRequestService);
   responseData: any;
   userComment: string = '';
@@ -76,11 +76,10 @@ export class ShoesDetailComponent {
         tap({
           next: (response) => {
             this.responseData = response.response.respuesta;
-            this.responses.unshift(
-              Array.isArray(this.responseData)
-                ? this.responseData
-                : [this.responseData]
-            );
+            this.responses.unshift({
+              question: this.marketRequestData.query,
+              answer: this.responseData,
+            });
 
             console.log('Respuesta del servidor:', response);
           },
