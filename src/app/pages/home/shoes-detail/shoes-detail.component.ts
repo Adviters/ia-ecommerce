@@ -21,6 +21,9 @@ export class ShoesDetailComponent {
   private marketRequestService = inject(MarketRequestService);
   responseData: any;
   userComment: string = '';
+  isArray(response: any): boolean {
+    return Array.isArray(response);
+  }
   private productImages: { [key: number]: string } = {
     1: 'assets/img/shoes/1.jpg',
     2: 'assets/img/shoes/2.jpg',
@@ -73,7 +76,12 @@ export class ShoesDetailComponent {
         tap({
           next: (response) => {
             this.responseData = response.response.respuesta;
-            this.responses.unshift(this.responseData);
+            this.responses.unshift(
+              Array.isArray(this.responseData)
+                ? this.responseData
+                : [this.responseData]
+            );
+
             console.log('Respuesta del servidor:', response);
           },
           error: (error) => {

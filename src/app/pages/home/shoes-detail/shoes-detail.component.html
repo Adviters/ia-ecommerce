@@ -43,7 +43,7 @@
       class="response mb-3"
     >
       <h4>Respuesta {{ responses.length - i }}:</h4>
-      <div>{{ response.join(", ") }}</div>
+      <div>{{ isArray(response) ? response.join(", ") : response }}</div>
     </div>
   </div>
 </div>
