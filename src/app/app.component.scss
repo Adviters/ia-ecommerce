@@ -2,20 +2,23 @@ html,
 body {
   height: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; // Hace que ocupe toda la altura de la pantalla
+  min-height: 100vh;
 }
 
 .content-container {
-  flex: 1; // Permite que el contenido crezca y empuje el footer hacia abajo
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
-  position: relative; // Evita que el footer flote en la mitad
+  margin-top: auto;
+  width: 100%;
+  position: relative;
 }
